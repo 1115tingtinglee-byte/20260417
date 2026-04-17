@@ -18,7 +18,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: 20260417
+        working-directory: 20260417/20260417
 
     steps:
       - uses: actions/checkout@v4
@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: 20260417/package-lock.json
+          cache-dependency-path: 20260417/20260417/package-lock.json
 
       - name: 安裝套件
         run: npm ci
@@ -39,7 +39,7 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: 20260417/dist
+          path: 20260417/20260417/dist
 
       - uses: actions/deploy-pages@v4
         id: deployment
